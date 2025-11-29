@@ -290,6 +290,15 @@
 }
 
 @media screen and (max-width: 768px) {
+    .submenu{
+        display: block;
+        position: static;
+        list-style: none;
+        left: 0;
+        background: #ffffff;
+        border: none;
+        padding: 10px;
+    }
     .history-timeline {
         gap: 1rem;
         margin-top: 1rem;
@@ -396,7 +405,6 @@
         width: 25px !important;
     }
     
-    /* Карточки фильмов */
     .movies img {
         height: auto;
         width: 100%;
@@ -406,7 +414,6 @@
         max-width: 180px;
     }
     
-    /* Фичи */
     .feature-item {
         padding: 0.6rem;
     }
@@ -419,7 +426,6 @@
         font-size: 0.85rem;
     }
     
-    /* Галерея */
     .fake-gallery {
         grid-template-columns: 1fr;
         gap: 0.8rem;
@@ -430,12 +436,10 @@
         height: 150px;
     }
     
-    /* Видео */
     .main-inform iframe {
         height: 200px;
     }
     
-    /* Мифы */
     .myths-block h4 {
         font-size: 1.1rem;
         margin-bottom: 1rem;
@@ -451,74 +455,5 @@
     
     .myth-card p {
         font-size: 0.85rem;
-    }
-}
-
-/* Горизонтальная ориентация на мобильных */
-@media screen and (max-height: 500px) and (orientation: landscape) {
-    .timeline-item {
-        flex-direction: row;
-        text-align: left;
-    }
-    
-    .timeline-icon {
-        margin: 0;
-        flex-shrink: 0;
-    }
-    
-    .feature-item {
-        flex-direction: row;
-        text-align: left;
-    }
-    
-    .movies {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-/* Высокопиксельные экраны */
-@media screen and (min-width: 1200px) {
-    .russia-content {
-        max-width: 1100px;
-    }
-    
-    .resource-links {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-}
-
-/* Улучшение доступности для сенсорных устройств */
-@media (hover: none) and (pointer: coarse) {
-    .resource-link,
-    .card-item figure,
-    .myth-card {
-        min-height: 44px;
-    }
-    
-    .fake-item {
-        padding: 10px;
-    }
-}
-
-/* Адаптивные utility-классы для истории */
-.history-section {
-    padding: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-    .history-section {
-        padding: 0.5rem;
-    }
-}
-
-/* Адаптация подменю для мобильных */
-@media screen and (max-width: 768px) {
-    .submenu {
-        position: static;
-        padding: 10px;
-        margin-top: 10px;
-        border: 1px solid #261534;
     }
 }
