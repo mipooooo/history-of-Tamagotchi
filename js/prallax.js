@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     parallaxContainer.className = 'parallax-pixels';
     
     const tamagotchiImages = [
-        '../img/charact2.png',
-        '../img/charact3.png', 
-        '../img/charact4.png',
-        '../img/charact3_1.png',
-        '../img/charct4_1.png',
-        '../img/charact5_1.png',
-        '../img/charact6_1.png'
+        'img/charact2.png',
+        'img/charact3.png', 
+        'img/charact4.png',
+        'img/charact3_1.png',
+        'img/charct4_1.png',
+        'img/charact5_1.png',
+        'img/charact6_1.png'
     ];
     
     for (let i = 0; i < 20; i++) {
