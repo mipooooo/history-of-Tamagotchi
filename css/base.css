@@ -1,6 +1,17 @@
 * {
     box-sizing: border-box;
 }
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+main, section, article, header, footer, nav {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 body{
     background-color: #ffbbdb;
