@@ -915,9 +915,7 @@ select:focus {
 @media screen and (max-width: 768px) {
     #original{
     flex-wrap: wrap;
-    justify-content: center;
-
-}
+    justify-content: center;    }
     .submenu{
         display: block;
         position: static;
