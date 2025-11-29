@@ -955,12 +955,6 @@ select:focus {
     .gallery_img{
         column-count: 1;
     }
-
-    #screen-check:checked ~ .tamago-img,
-    #btns-check:checked ~ .tamago-img,
-    #body-check:checked ~ .tamago-img {
-        transform: translateX(-30%) scale(0.7);
-    }
     #design {
     position: relative;
     margin: 10px auto;
@@ -981,34 +975,33 @@ select:focus {
         height: 300px;
     }
 
+    .tamagotchi-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .tamago-img {
+        width: 100%;
+        height: auto;
+    }
     .info-panel {
-        width: 90%;
+        width: 100%;
         max-width: 300px;
         padding: 15px;
         left: 50%;
-        transform: translateX(-50%) scale(0.9);
     }
-    
+
     #screen-check:checked ~ .screen-info,
     #btns-check:checked ~ .buttons-info,
     #body-check:checked ~ .body-info {
-        transform: translateX(-50%) scale(1);
+        transform: translateX(-50%) scale(1) translateY(-45%);
     }
-
+    
     #screen-check:checked ~ .tamago-img,
     #btns-check:checked ~ .tamago-img,
     #body-check:checked ~ .tamago-img {
-        transform: translateX(-25%) scale(0.7);
-    }
-    
-    .click-area::after {
-        font-size: 0.8rem;
-        padding: 2px 6px;
-        top: -25px;
-    }
-    
-    .click-area:hover::after {
-        top: -30px;
+        transform: translateX(-25%) scale(0.2);
     }
 
 }
@@ -1040,5 +1033,33 @@ select:focus {
     #btns-check:checked ~ .tamago-img,
     #body-check:checked ~ .tamago-img {
         transform: translateX(-20%) scale(0.6);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .click-area::after {
+        opacity: 1;
+        top: -30px;
+    }
+    
+    .click-area {
+        border: 2px dashed rgba(247, 168, 180, 0.5);
+    }
+    
+    .click-area:active {
+        background-color: rgba(247, 168, 180, 0.2);
+    }
+
+#screen-check:checked ~ .click-area,
+    #btns-check:checked ~ .click-area,
+    #body-check:checked ~ .click-area {
+        border: none !important;
+        pointer-events: none;
+    }
+    
+    #screen-check:checked ~ .click-area::after,
+    #btns-check:checked ~ .click-area::after,
+    #body-check:checked ~ .click-area::after {
+        display: none !important;
     }
 }
