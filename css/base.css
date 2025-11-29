@@ -1,26 +1,24 @@
 * {
     box-sizing: border-box;
 }
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    position: relative;
-}
 
-main, section, article, header, footer, nav {
+.carousel-wrapper {
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
-
 body{
     background-color: #ffbbdb;
     position: relative;
     margin: 0;
     padding: 0;
     display: flex; 
+    width: 100%;
     flex-direction: column; 
     min-height: 100vh;
+    overflow-x: hidden;
+}
+main, section, article {
+    max-width: 100%;
     overflow-x: hidden;
 }
 
