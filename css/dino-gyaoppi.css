@@ -1,0 +1,297 @@
+.left img{
+    width: auto;
+    object-fit: cover;
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
+    align-items: center;
+}
+
+.left p{
+    flex-basis: 55%;
+}
+
+.right{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    gap: 50px;
+    align-items: center;
+}
+
+.right p{
+    flex-basis: 55%;
+}
+
+.effect_txt {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.effect_txt figcaption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 201, 68, 0.72);
+    color: #000000;
+    box-sizing: border-box;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+}
+.effect_txt figcaption h3 {
+    margin-bottom: 10px;
+}
+
+.effect_txt figcaption p {
+    margin: 0; 
+}
+.effect_txt:hover figcaption{
+    opacity: 1;
+}
+
+.read-more-btn{
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    border: 3px solid #261534;
+    box-shadow: 5px 5px 0px #faf396;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
+}
+.collapse {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, background-color 0.4s ease;
+}
+
+.collapse.open {
+    opacity: 1;
+    max-height: 300px;
+    margin-top: 10px;
+    background-color: white;
+    border: 3px solid #261534;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card {
+    margin-top: 10px;
+}
+
+.manage{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.point{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.evol{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.evol img{
+    background-color: #ffbbdb;
+    border-radius: 10px;
+    border: 3px solid #261534;
+    padding: 10px;
+
+}
+
+@media screen and (max-width: 1024px) {
+    .left, .right {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .left p, .right p {
+        flex-basis: 100%;
+    }
+    
+    .effect_txt {
+        width: 100%;
+        max-width: 250px;
+        height: 280px;
+    }
+    
+    .point {
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .evol {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .left, .right {
+        gap: 20px;
+    }
+    
+    .left p, .right p {
+        font-size: 0.9rem;
+    }
+    
+    .effect_txt {
+        max-width: 200px;
+        height: 250px;
+    }
+    
+    .effect_txt figcaption {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .manage {
+        gap: 12px;
+    }
+    
+    .point {
+        max-width: 100%;
+    }
+    
+    .read-more-btn {
+        padding: 6px 10px;
+        gap: 6px;
+    }
+    
+    .btn-text {
+        font-size: 0.9rem;
+    }
+    
+    .btn-icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    .collapse.open {
+        max-height: 400px;
+        margin-top: 6px;
+        padding: 6px;
+        font-size: 0.85rem;
+    }
+    
+    .collapse.open li {
+        font-size: 0.85rem;
+    }
+    
+    .evol {
+        padding: 10px;
+        gap: 12px;
+    }
+    
+    .evol p {
+        font-size: 0.9rem;
+    }
+    
+    .evol img {
+        max-width: 90%;
+        height: auto;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left, .right {
+        gap: 15px;
+    }
+    
+    .left p, .right p {
+        font-size: 0.85rem;
+        margin: 5px;
+    }
+    
+    .effect_txt {
+        max-width: 180px;
+        height: 220px;
+    }
+    
+    .effect_txt figcaption {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    
+    .manage {
+        gap: 10px;
+    }
+    
+    .read-more-btn {
+        padding: 5px 8px;
+        gap: 5px;
+    }
+    
+    .btn-text {
+        font-size: 0.8rem;
+    }
+    
+    .btn-icon {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    .collapse.open {
+        max-height: 350px;
+        margin-top: 5px;
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+    
+    .collapse.open li {
+        font-size: 0.8rem;
+    }
+    
+    .evol {
+        padding: 8px;
+        gap: 10px;
+    }
+    
+    .evol p {
+        font-size: 0.85rem;
+    }
+    
+    .evol img {
+        max-width: 80%;
+        height: auto;
+        padding: 6px;
+    }
+}

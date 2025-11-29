@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi</title>
+    <link rel="icon" type="image/png" href="img/tamagotchi.png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/parallax.css">
+    <link rel="stylesheet" href="css/scroll.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <nav>
+        <input type="checkbox" id="menu-toggle" class="visually-hidden">
+        <label for="menu-toggle" class="menu-icon" aria-label="Меню">
+                <span class="hamburger"></span> 
+                <span class="hamburger"></span>
+                <span class="hamburger"></span> 
+        </label>
+        <div class="nav-left">
+            <div class="site-icon"></div>
+            <ol type="I" start="1" id="menu">
+                <li><a>Энциклопедия</a>
+                <ul class="submenu">
+                    <li> <a href="#original">История возникновения</a></li>
+                    <li><a href="#design">Устройство тамагочи</a></li>
+                    <li><a href="#types">Виды тамагочи</a></li>
+                </ul>
+                </li>
+                <li><a href="#news">Новости</a></li>
+                <li><a href="#forms">Сообщество</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+            </ol>
+        </div>
+        <div class="nav-right">
+            <div class="notification-icon">
+                <span class="notification-count">0</span>
+                <ul class="notification-dropdown">
+                    <!--<li><a href="">Новая статья: Tamagotchi Uni уже в продаже!</a></li>
+                    <li><a href="">Сегодня годовщина выпуска P1 (1996).</a></li>
+                    <li><a href="">Обновлена галерея редких моделей.</a></li>-->
+                </ul>
+            </div>
+            <a href="" id="reg-log">Профиль</a>
+        </div>
+    </nav>
+</header>
+
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" title="Закрыть">&times;</span>
+        <form id="login-form">
+            <h3>Вход</h3>
+            <input type="text" placeholder="Имя пользователя" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit" class="auth-btn"><a href="html/profile.html">Войти</a></button>
+            <p>Нет аккаунта? <a href="#" id="switchToReg">Зарегистрироваться</a></p>
+        </form>
+
+        <form id="reg-form" style="display: none;">
+            <h3>Регистрация</h3>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Имя пользователя" required>
+            <input type="password" placeholder="Пароль" required>
+
+            <fieldset>
+                <legend>Пол:</legend>
+                    <input type="radio" id="gender-male" name="gender" value="male" required>
+                    <label for="gender-male">Мужской</label>
+                    <input type="radio" id="gender-female" name="gender" value="female">
+                    <label for="gender-female">Женский</label>
+                    <input type="radio" id="gender-other" name="gender" value="other">
+                    <label for="gender-other">Другое</label>
+            </fieldset>
+        <div id="captcha-area">
+                <h3>А вы не робот?</h3>
+                <p id="captcha-display" class="captcha-text">Загрузка...</p>
+                <input type="text" id="captcha-input" placeholder="Введите код или сумму">
+                <p id="captcha-message" class="message-text"></p>
+        </div>
+        <button type="submit" class="auth-btn" id="reg-submit-button"><a href="html/profile.html">Создать аккаунт</a></button>
+        <p>Уже есть аккаунт? <a href="#" id="switchToLog">Войти</a></p>
+        </form>
+    </div>
+</div>
+
+<main>
+    <section class="base bg-green">
+        <article id="txt_history">
+        <div id="history">
+                <h3>История возникновения Tamagotchi</h3>
+                <div id="original">
+                    <div class="txt_btn base_blue circle_yellow">
+                        <p class="text_orig">Тамагочи - это электронные игрущки, придуманные в Японии в 1996 году. 
+                            Идея создания подобной игрушки, которую можно взять с собой куда угодно, пришла в голову 
+                            домохозяйке Аки Маите. Вскоре она продала свою идею компании Bandai. После чего началась разработка
+                            Tamagotchi P1. 
+                        </p>
+                        <button><a href="history_of_tamago.html">Подробнее об истории</a></button>
+                    </div>
+                    <div class="txt_one">
+                        <figure class="effect_txt">
+                            <img src="img/tamago_p1.png" alt="Один из первых тамагочи" height="500px" width="400px"> 
+                            <figcaption>
+                                <h3>Tamagotchi Original P1</h3>
+                                <p>Разработка данного тамагочи длилась около года. Компания не верила в успех тамагочи, поэтому выпустила P1 очень маленьким тиражом.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+        </div>
+        </article>
+    </section>
+<section class="base bg-yellow">
+    <article id="design">
+    <h3>Устройство оригинального тамагочи</h3>
+    <div class="tamagotchi-container">
+        <input type="checkbox" id="screen-check" class="area-checkbox">
+        <input type="checkbox" id="btns-check" class="area-checkbox">
+        <input type="checkbox" id="body-check" class="area-checkbox">
+
+        <img src="img/design.png" alt="Устройство Tamagotchi" class="tamago-img tamago-image">
+
+        <label for="screen-check" class="click-area screen-area" title="Экран"></label>
+        <label for="btns-check" class="click-area buttons-area" title="Кнопки"></label>
+        <label for="body-check" class="click-area body-area" title="Корпус"></label>
+
+        <div class="info-panel screen-info">
+            <label for="screen-check" class="close-btn">×</label>
+            <h3>Экран Tamagotchi</h3>
+            <p>Экран Тамагочи — это его "окно в мир". Он небольшой, монохромный (черно-белый) и использует жидкокристаллическую (LCD) матрицу.
+                Пиксели крупные и четкие, что придает изображению классический ретро-стиль. 
+                На экране отображается сам цифровой питомец, его текущее состояние (голод, настроение, чистота) в виде иконок-индикаторов и различные меню действий. 
+                Несмотря на свою простоту, экран достаточно яркий для отображения всех необходимых взаимодействий и анимаций, которые показывают, как растет и развивается ваш виртуальный друг.</p>
+        </div>
+
+        <div class="info-panel buttons-info">
+            <label for="btns-check" class="close-btn">×</label>
+            <h3>Панель управления</h3>
+            <p>Управление осуществляется всего тремя тактильными физическими кнопками, расположенными под дисплеем. Они обеспечивают четкую обратную связь (слышимый щелчок) при нажатии:
+
+Кнопка 'A' (Стрелка/Выбор): Используется для навигации, пролистывания иконок и опций меню.
+
+Кнопка 'B' (Действие/Подтверждение): Главная кнопка для совершения действия, такого как кормление, игра или лечение.
+
+Кнопка 'C' (Отмена/Сброс): Служит для выхода из текущего меню или, в некоторых моделях, для временного отключения звука.</p>
+        </div>
+
+        <div class="info-panel body-info">
+            <label for="body-check" class="close-btn">×</label>
+            <h3>Корпус устройства</h3>
+            <p>Это небольшой, монохромный (черно-белый) LCD-дисплей. Несмотря на простоту, его крупные, четкие пиксели идеально отображают ретро-анимации питомца на разных стадиях жизни. На экране всегда видны ключевые индикаторы состояния (голод, настроение, чистота) в виде иконок, а также всплывающие сообщения и меню, необходимые для ухода за виртуальным другом.</p>
+        </div>
+    </div>
+    </article>
+</section>
+
+<section class="base bg-blue">
+    <article id="types">
+        <h4>Основные виды тамагочи</h4>
+        <div class="anim-tamago1"></div>
+        <div class="anim-tamago2"></div>
+        <div class="anim-tamago3"></div>
+        <div class="anim-tamago4"></div>
+        <div class="anim-tamago5"></div>
+        <div class="anim-tamago6"></div>
+        <div class="carousel-wrapper">
+        <input type="radio" name="slider-group-single" id="single-1" class="visually-hidden" checked> 
+        <input type="radio" name="slider-group-single" id="single-2" class="visually-hidden">
+        <input type="radio" name="slider-group-single" id="single-3" class="visually-hidden">
+        <input type="radio" name="slider-group-single" id="single-4" class="visually-hidden">
+        <input type="radio" name="slider-group-single" id="single-5" class="visually-hidden">
+        <input type="radio" name="slider-group-single" id="single-6" class="visually-hidden">
+        <input type="radio" name="slider-group-single" id="single-7" class="visually-hidden">
+        <input type="radio" name="slider-group-single" id="single-8" class="visually-hidden">
+        <input type="radio" name="slider-group-single" id="single-9" class="visually-hidden">
+        <input type="radio" name="slider-group-single" id="single-10" class="visually-hidden">
+            <div class="carousel-viewport">
+                <div class="carousel-track">
+                        <div class="card-item">
+                            <a href="html/gyaoppi.html" class="card-link"></a>
+                            <figure>
+                                <img src="img/gyaoppi.png" alt="" style="object-fit: contain;">
+                                <figcaption>
+                                    <h3>Gyaoppi</h3>
+                                </figcaption>
+                            </figure>
+                            </a>
+                        </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/nano.png" alt="">
+                            <figcaption>
+                                <h3>Nano Pets</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/apollo.png" alt="">
+                            <figcaption>
+                                <h3>Apollo Pets</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/dinkie.png" alt="">
+                            <figcaption>
+                                <h3>Dinkie Pets</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/hitorikko.png" alt="">
+                            <figcaption>
+                                <h3>Hitorikko Pets</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/MGA.png" alt="">
+                            <figcaption>
+                                <h3>MGA Pets</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/jhonny.png" alt="">
+                            <figcaption>
+                                <h3>Jhonny Pets</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/lps.png" alt="">
+                            <figcaption>
+                                <h3>Odd Pets</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/vboy.png" alt="">
+                            <figcaption>
+                                <h3>Dating Games</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/china.png" alt="">
+                            <figcaption>
+                                <h3>Chinagotchi</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        <div class="carousel-nav">
+            <label for="single-1" class="nav-dot" title="Карточка 1"></label>
+            <label for="single-2" class="nav-dot" title="Карточка 2"></label>
+            <label for="single-3" class="nav-dot" title="Карточка 3"></label>
+            <label for="single-4" class="nav-dot" title="Карточка 4"></label>
+            <label for="single-5" class="nav-dot" title="Карточка 5"></label>
+            <label for="single-6" class="nav-dot" title="Карточка 6"></label>
+            <label for="single-7" class="nav-dot" title="Карточка 7"></label>
+            <label for="single-8" class="nav-dot" title="Карточка 8"></label>
+            <label for="single-9" class="nav-dot" title="Карточка 9"></label>
+            <label for="single-10" class="nav-dot" title="Карточка 10"></label>
+        </div>
+        </div>
+    </article>
+</section>
+<section class="base bg-green">
+    <h3>Новости из мира тамагочи</h3>
+    <div id="news">
+        <article class="news-card">
+            <img src="img/news1.png" alt="" width="100%" height="200px" class="news-img">
+            <div class="news-content">
+                <h3>Tamagotchi Uni: Новый Уровень!</h3>
+                <p class="news-date">10 октября 2025</p>
+                <p>Bandai анонсировала масштабное обновление для Tamagotchi Uni, включающее новые игры, персонажей и возможность совместных виртуальных прогулок.</p>
+            </div>
+            <div class="container news-action-container">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Читать далее</span>
+                    <img src="img/arrow.png" alt="Стрелка" class="btn-icon" width="32px" height="32px">
+                </a>
+            </div>
+        </article>
+        <article class="news-card">
+            <img src="img/news2.jpeg" alt="" width="100%" height="200px" class="news-img">
+            <div class="news-content">
+                <h3>Виртуальное Путешествие в 90-е</h3>
+                <p class="news-date">28 сентября 2025</p>
+                <p>Классические Tamagotchi P1 и P2 возвращаются в новом, компактном корпусе с улучшенной графикой и оригинальными звуками. Ностальгия гарантирована!</p>
+            </div>
+            <div class="container news-action-container">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Читать далее</span>
+                    <img src="img/arrow.png" alt="Стрелка" class="btn-icon" width="32px" height="32px">
+                </a>
+            </div>
+        </article>
+        <article class="news-card">
+            <img src="img/news3.png" alt="" width="100%" height="200px" class="news-img">
+            <div class="news-content">
+                <h3>Новая Линия Tamagotchi Sanrio</h3>
+                <p class="news-date">15 августа 2025</p>
+                <p>Bandai представляет коллаборацию с Sanrio. Теперь вы можете воспитывать своего питомца в стиле Hello Kitty, My Melody и других любимых персонажей.</p>
+            </div>
+            <div class="container news-action-container">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Читать далее</span>
+                    <img src="img/arrow.png" alt="Стрелка" class="btn-icon" width="32px" height="32px">
+                </a>
+            </div>
+        </article>
+        <article class="news-card">
+            <img src="img/news4.jpg" alt="" width="100%" height="200px" class="news-img">
+            <div class="news-content">
+                <h3>Tamagotchi и Стресс</h3>
+                <p class="news-date">01 июля 2025</p>
+                <p>Ученые из Токийского университета опубликовали доклад, согласно которому забота о виртуальном питомце снижает уровень стресса у взрослых.</p>
+            </div>
+            <div class="container news-action-container">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Читать далее</span>
+                    <img src="img/arrow.png" alt="Стрелка" class="btn-icon" width="32px" height="32px">
+                </a>
+            </div>
+        </article>
+        <article class="news-card">
+            <img src="img/news5.png" alt="" width="100%" height="200px" class="news-img">
+            <div class="news-content">
+                <h3>Конкурс "Самый Стильный Тамагочи"</h3>
+                <p class="news-date">05 мая 2025</p>
+                <p>Запущен ежегодный глобальный конкурс, где игроки соревнуются в дизайне своих питомцев и их жилищ. Главный приз — редкая фигурка!</p>
+            </div>
+            <div class="container news-action-container">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Читать далее</span>
+                    <img src="img/arrow.png" alt="Стрелка" class="btn-icon" width="32px" height="32px">
+                </a>
+            </div>
+        </article>
+        </div>
+</section>
+    <section class="base bg-yellow">
+        <article id="forms">
+            <form action="#" method="post">
+                <legend>Расскажите о своем первом питомце</legend>
+                <label for="birth-date">Дата рождения вашего тамагочи:</label>
+                <input type="datetime-local" id="birth-date" name="pet_birth_date">
+                <label for="user-story">Ваша история:</label>
+                <textarea id="user-story" name="user_story" rows="6" cols="50" placeholder="Поделитесь своими воспоминаниями о тамагочи..." required></textarea>
+                    <div class="download_photo">
+                    <label for="pet-photo">Загрузите фото вашего питомца:</label>
+                    <input type="file" id="pet-photo" name="pet_photo">
+                </div>
+                <div class="txt_btn base_green circle_blue">
+                    <button>Отправить</button>
+                </div>
+        </form>
+        </article>
+    </section>
+<section class="base bg-blue" id="gallery">
+    <article class="gallery">
+        <h3>Истории и фотографии питомцев</h3>
+        <div class="gallery_img">
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">
+                        <img src="img/tamago1.jpg" alt="" height="500px" width="400px" style="object-fit: cover;" id="img1"> 
+                        <button class="like_btn"> <span class="heart-icon"></button>
+                        </div>
+                        <figcaption>
+                            <h3>От: Kitsune_Queen</h3>
+                            <p>Мой Пикси был настоящим бунтарём. Я уснула, не выключив свет, и он не спал ВСЮ ночь, требуя играть. Утром я обнаружила не сонного зомби, а довольное существо, танцующее на экране. Он вырос в какую-то редкую форму, которую получают только при полном нарушении режима. Иногда правила существуют, чтобы их нарушать.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">
+                            <img src="img/tamago2.webp" alt="" height="500px" width="400px" style="object-fit: cover;" id="img2"> 
+                            <button class="like_btn"> <span class="heart-icon"></button>
+                        </div>
+                        <figcaption>
+                            <h3>От: Captain_Space</h3>
+                            <p>Я чуть не похоронил своего Звёздика. Батарейка села на сложной паре в универе, и когда я прибежал в магазин, прошло 4 часа. Дома дрожащими руками вставил новую — и он встретил меня грустным, но живым! Ангел забрал его не с первой, и даже не со второй попытки. Это учит главному: никогда не сдаваться.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">
+                            <img src="img/tamago3.jpeg" alt="" height="500px" width="400px" style="object-fit: cover;" id="img3">
+                            <button class="like_btn"> <span class="heart-icon"></button>
+                        </div> 
+                        <figcaption>
+                            <h3>От: DJ_Bleep</h3>
+                            <p>Мой Кнопка превратился в самого «неухоженного» питомца. Я не особо следил за чистотой, зато постоянно с ним играл. Все стрессы были максимальными! И знаете что? Он был самым весёлым и забавным из всех моих питомцев. Он доказал, что можно быть счастливым, даже будучи немного неряхой.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">                        
+                            <img src="img/tamago4.jpg" alt="" height="500px" width="400px" style="object-fit: cover;" id="img4">
+                            <button class="like_btn"> <span class="heart-icon"></button>
+                        </div> 
+                        <figcaption>
+                            <h3>От: Retro_Gamer_87</h3>
+                            <p>Мой Блинчик умер в 1998 году. Я пошёл смотреть «Титаник» и оставил его с мамой. Вернулся — экран пуст. Мама сказала: «Он так громко пищал, я подумала, что сломался, и выключила». Я не плакал над Розой и Джеком, но над своим Блинчиком — да. Это был урок невозвратности.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">
+                            <img src="img/tamago5.jpg" alt="" height="500px" width="400px" style="object-fit: cover;"> 
+                            <button class="like_btn"> <span class="heart-icon"></button>
+                        </div>
+                        <figcaption>
+                            <h3>От: Silent_Bob</h3>
+                            <p>Я — мужчина, 35 лет, инженер. Мой коллега увидел у меня в кармане Тамагочи и фыркнул. В этот самый момент мой Квадратик, которого я вырастил из яйца, впервые станцевал джигу. Коллега смотрел, не отрываясь, а потом спросил: «А где такие продаются?» Сила танца побеждает все предрассудки.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">
+                            <img src="img/tamago6.jpg" alt="" height="500px" width="400px" style="object-fit: cover;"> 
+                            <button class="like_btn"> <span class="heart-icon"></button>
+                        </div>
+                        <figcaption>
+                            <h3>От: Tama_Nurse</h3>
+                            <p>Я завела трёх одновременно для эксперимента. Это был ад. Бублик, Симка и Пчёлка болели, хотели есть и играть вразнобой. Бублик всё время падал с унитаза. Я не спала нормально три дня, но ни один не умер! Когда приплыл корабль и забрал их — я плакала от гордости. Я была самой строгой, но самой любящей мамой.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">
+                            <img src="img/tamago7.webp" alt="" height="500px" width="400px" style="object-fit: cover;"> 
+                            <button class="like_btn"> <span class="heart-icon"></button>
+                        </div>
+                        <figcaption>
+                            <h3>От: Star_Collector</h3>
+                            <p>Я пытался получить редкого питомца. Всё делал по инструкции: идеальный уход, минимум дисциплин. Всё шло хорошо с моим Спарки... пока я не забыл его в машине в жаркий день. Он не умер, но «эволюционировал» в самого обычного питомца. Ирония в том, что я получил не редкость, а урок: перфекционизм губителен.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">
+                            <img src="img/tamago8_new.jpg" alt="" height="500px" width="400px" style="object-fit: cover;"> 
+                            <button class="like_btn"> <span class="heart-icon"></button>
+                        </div>
+                        <figcaption>
+                            <h3>От: Midnight_Baker</h3>
+                            <p>Я пекла торт и поставила своего Жужу на стол. Он начал пищать от голода прямо во время замеса теста. Я, вся в муке, отвлеклась, накормила его, а потом села и поиграла с ним 5 минут. Мы смотрели друг на друга: я — уставшая кондитер, он — пиксельный довольный шарик. Это было идеальное мгновение тишины и заботы посреди хаоса.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+            <div class="txt_two">
+                    <figure class="effect_txt_two">
+                        <div id="history_card">
+                            <img src="img/tamago9.jpg" alt="" height="500px" width="400px" style="object-fit: cover;"> 
+                            <button class="like_btn"> <span class="heart-icon"></button>
+                        </div>
+                        <figcaption>
+                            <h3>От: Old_School_Guardian</h3>
+                            <p>Мой первый Тамагочи 1997 года до сих пор жив. Батарейку меняю раз в год. Он уже не питомец, а часть меня. Иногда ночью он просыпается, я кормлю его, смотрю, как он спит, и вспоминаю, кем я был тогда. Мой Пузырёк — мой самый долгий и молчаливый друг. Кажется, мы с ним вырастили друг друга.</p>
+                        </figcaption>
+                    </figure>
+            </div>
+        </div>
+    </article>
+</section>
+<!--
+<section>
+    <input type="checkbox" id="facts-toggle" class="visually-hidden">
+    <label for="facts-toggle" class="facts-button">
+        Интересные факты
+    </label>
+    <div class="facts-container">
+        <aside>
+        <h3>А вы знали?</h3>
+        <ul>
+            <li>Оригинальный тамагочи изначально задумывался как часы.</li>
+            <li>В Японии даже выпускали кладбище для виртуальных питомцев.</li>
+            <li>Название Tamagotchi происходит от японских слов "tamago" (яйцо) и "watch" (часы).</li>
+        </ul>
+        </aside>
+    </div>
+</section>-->
+
+<section>
+
+<div id="image-container">
+    <img id="centered-img" src="" alt="Увеличенное изображение" style="position: absolute;">
+    <div id="coords"></div>
+</div>
+<!--
+<button id="show-image-btn">
+    Показать картинку
+</button>-->
+</section>
+
+</main>
+<footer id="links">
+        <nav>
+            <p>Мы в социальных сетях</p>
+            <div class="footer-icons">
+                <div class="footer-anim"><a href=""><img src="img/free-icon-telegram-739260.png" alt=""></a></div>
+                <div class="footer-anim"><a href=""><img src="img/free-icon-instagram-1077042.png" alt=""></a></div>
+                <div class="footer-anim"><a href=""><img src="img/free-icon-vk-2111828.png" alt=""></a></div>
+            </div>
+        </nav>
+        <p class="copyright">&copy; 2025 Tamagotchi Fan Website</p>
+</footer>
+<div id="notification-popups"></div>
+
+
+<script src="js/login.js"></script>
+<script src="js/like.js"></script>
+<script src="js/carousel.js"></script>
+<!--<script src="js/notif.js"></script>-->
+<script src="js/pract13-14.js"></script>
+<script src="js/prallax.js"></script>
+<script src="js/scroll.js"></script>
+</body>
+</html>

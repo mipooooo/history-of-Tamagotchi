@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/tamagotchi.png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/history.css">
+    <title>History of tamagotchi</title>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <input type="checkbox" id="menu-toggle" class="visually-hidden">
+        <label for="menu-toggle" class="menu-icon" aria-label="Меню">
+                <span class="hamburger"></span> 
+                <span class="hamburger"></span>
+                <span class="hamburger"></span> 
+        </label>
+        <div class="nav-left">
+            <div class="site-icon"></div>
+            <ol type="I" start="1" id="menu">
+                <li><a href="html/index.html">Главная страница</a></li>
+                <li><a>Полная история</a>
+                <ul class="submenu">
+                    <li> <a href="#world_history">История тамагочи в мире</a></li>
+                    <li><a href="#russian_tamago">Тамагочи в России</a></li>
+                </ul>
+                </li>
+                <li><a href="#links">Полезные ссылки</a></li>
+            </ol>
+        </div>
+        <div class="nav-right">
+            <div class="notification-icon">
+                <span class="notification-count">3</span>
+                <ul class="notification-dropdown">
+                    <li><a href="">Новая статья: Tamagotchi Uni уже в продаже!</a></li>
+                    <li><a href="">Сегодня годовщина выпуска P1 (1996).</a></li>
+                    <li><a href="">Обновлена галерея редких моделей.</a></li>
+                    
+                </ul>
+            </div>
+            <a href="" id="reg-log">Профиль</a>
+        </div>
+    </nav>
+</header>
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" title="Закрыть">&times;</span>
+        <form id="login-form">
+            <h3>Вход</h3>
+            <input type="text" placeholder="Имя пользователя" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit" class="auth-btn"><a href="html/profile.html">Войти</a></button>
+            <p>Нет аккаунта? <a href="#" id="switchToReg">Зарегистрироваться</a></p>
+        </form>
+        <form id="reg-form" style="display: none;">
+            <h3>Регистрация</h3>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Имя пользователя" required>
+            <input type="password" placeholder="Пароль" required>
+
+            <fieldset>
+                <legend>Пол:</legend>
+                    <input type="radio" id="gender-male" name="gender" value="male" required>
+                    <label for="gender-male">Мужской</label>
+                    <input type="radio" id="gender-female" name="gender" value="female">
+                    <label for="gender-female">Женский</label>
+                    <input type="radio" id="gender-other" name="gender" value="other">
+                    <label for="gender-other">Другое</label>
+            </fieldset>
+        <div id="captcha-area">
+                <h3>А вы не робот?</h3>
+                <p id="captcha-display" class="captcha-text">Загрузка...</p>
+                <input type="text" id="captcha-input" placeholder="Введите код или сумму">
+                <p id="captcha-message" class="message-text"></p>
+        </div>
+        <button type="submit" class="auth-btn" id="reg-submit-button"><a href="html/profile.html">Создать аккаунт</a></button>
+        <p>Уже есть аккаунт? <a href="#" id="switchToLog">Войти</a></p>
+        </form>
+    </div>
+</div>
+<main>
+<section class="base bg-green" id="world_history">
+        <article>
+            <h3>История тамагочи в мире</h3>
+    <div class="history-timeline">
+        <div class="timeline-item">
+            <div class="timeline-img">
+                <div class="timeline-icon"><img src="img/caharct5.png" alt="" width="50px"></div>
+            </div>
+            <div class="timeline-content">
+                <h4>Рождение идеи (1996)</h4>
+                <p>Аки Маита - обычная домохозйяка, которая очень любила животных.
+                    Идея пришла ей как раз из-за любви к животным - она жила в квартире, где нельзя была держать домашних питомцев. 
+                    Поэтому она придумала таких вирутальных питомцев, которых можно брать с собой куда угодно. 
+                    Вскоре эту идею она продала компании Bandai.
+                </p>
+                <div class="fun-fact">
+                    <blockquote>"А что, если бы питомец был всегда с тобой, в кармане?"</blockquote>
+                    <cite>— Аки Маита</cite>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-img">
+                <div class="timeline-icon"><img src="img/charact3.png" alt="" width="50px"></div>
+            </div>
+            <div class="timeline-content">
+                <h4>Взрыв популярности (1996-1997)</h4>
+                <p>Первый Tamagotchi P1 был выпущен в Японии 23 ноября 1996 года.
+                    Разработка длилась около года, предлагались различные варианты игрушки, например, с откидывающейся сверху скорлупкой.
+                Любопытно, что в компании не верили в успех, поэтому выпустили Tamagotchi P1 маленьким тиражом. 
+            Однако он завоевал огромную любовь фанатов, идею виртуальных питомцев мгновенно подхватили сотни компаний, а сама компания Bandai за пару лет выпустила около десяти моделей: от ангела до Санта-Клауса.
+        </p>
+                <div class="fun-fact">
+                    <strong>Интересный факт:</strong> Название "Тамагочи" (Tamagotchi) — это игра слов от японского <em>tamago</em> (яйцо) и <em>uocchi</em> (часы).
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-img">
+                <div class="timeline-icon"><img src="img/charact3_2.png" alt="" width="45px"></div>
+            </div>
+            <div class="timeline-content">
+                <h4>А что было после 90-х?</h4>
+                <p>
+                    Продукция бренда не ограничивалась электронными игрушками: продавались мягкие игрушки, одежда и канцтовары. 
+                    А позже в было снято два полнометражных мультфильма и аниме-сериал
+                </p>
+                <div class="movies">
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/movie1.jpg" alt="">
+                            <figcaption>
+                                <h5>Tamagotchi: The movie</h5>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/movie2.webp" alt="">
+                            <figcaption>
+                                <h5>Tamagotchi: Happiest stroy in the Universe</h5>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-item">
+                        <figure>
+                            <img src="img/movie3.webp" alt="">
+                            <figcaption>
+                                <h5>Tamagotchi!</h5>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <p>Любовь к тамагочи была настолько сильной, что появился эффект тамагочи - психическое расстройство, при котором человек слишком привчзан к питомцу.
+                    Для таких людей организовали в английской деревне Понтс Милл отдельную зону для захоронения цифровых зверьков.
+                    Правда, судьба таких кибермогил на настоящих кладбищах неизвестна – не исключено, что их давно убрали.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</article>
+        </article>
+</section>
+<section class="base bg-yellow" id="russian_tamago">
+        <article>
+            <h3>Тамагочи в России</h3>
+        <div class="russia-content">
+            <div class="text-block">
+                <div class="main-inform">
+                    <h4>Бум конца 90-х</h4>
+                    <p>Пока во всем мире играли в тамагочи от Bandai, российские дети о таком даже не слышали.
+                        Считалось, что тамагочи - это электронный приборчик, в котором живет кошечка или собачка.
+                        Дети попросту не знали, что в оригинальных тамагочи были и оригинальные персонажи, а не кошечки и собачки. 
+                        Тамагочи не от Bandai в мире называли virtual pets, но в нашу страну их завозили именно как "тамагочи".
+                        Тамагочи нашли отражение в россйиских фильмах и сериалах того времени, например в сериале "Улица разбитых фонарей":
+                    </p>
+                    <iframe src="https://vk.com/video_ext.php?oid=-60953845&id=456243326&autoplay=1" width="640" height="360" style="background-color: #000" allow=" encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                    <p>СМИ также уделали довольно много внимания игрушке: одни демонизировали ее, а другие наоборот с энтузиазмом рассказывали о такой необычной игрушке.
+                        Зачастую название принимало различные формы: тамагучи, томогочи, тумагочи и тому подобные. 
+                    </p>
+                </div>
+            <div class="feature-list">
+                <h4>Уникальные особенности российского рынка</h4>
+                
+                <div class="feature-item">
+                    <span class="feature-icon"><img src="img/money.png" alt=""></span>
+                    <div class="feature-text">
+                        <strong>Ценовой шок и статус</strong>
+                        <p>Оригинальный Tamagotchi стоил 50-70$ при средней зарплате 100-200$. Это был символ статуса - "богатые" дети с оригиналами vs "обычные" с подделками</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <span class="feature-icon"><img src="img/book.png" alt="">
+                    </span>
+                    <div class="feature-text">
+                        <strong>Школьная субкультура</strong>
+                        <p>Появились "тамагочи-няни" - дежурные, кормившие питомцев на уроках. Процветал черный рынок обмена и торговли</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <span class="feature-icon"><img src="img/message.png" alt=""></span>
+                    <div class="feature-text">
+                        <strong>Информационный голод</strong>
+                        <p>Не было русских инструкций и официальной информации. Все знания - через "сарафанное радио", что порождало мифы</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <span class="feature-icon"><img src="img/gamepad.png" alt=""></span>
+                    <div class="feature-text">
+                        <strong>Творческая адаптация</strong>
+                        <p>Дети давали питомцам русские имена, рисовали "домики" в тетрадях, создавали самодельные чехлы и аксессуары</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <span class="feature-icon"><img src="img/tamagotchi_pix.png" alt=""></span>
+                    <div class="feature-text">
+                        <strong>Коллективные ритуалы</strong>
+                        <p>Соревнования "чей тамагочи дольше проживет", коллективные "похороны" умерших питомцев, практика "перерождения"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="gallery-block">
+                <h4>Самые популярные модели</h4>
+                <div class="fake-gallery">
+                    <div class="fake-item">
+                        <div class="fake-image" style="background-image: url('img/gyaoppi_super.png');"></div>
+                        <p class="fake-name">Super Gyaoppi 9 in 1</p>
+                    </div>
+                    <div class="fake-item">
+                        <div class="fake-image" style="background-image: url('img//china.png');"></div>
+                        <p class="fake-name">Китайские подделки</p>
+                    </div>
+                    <div class="fake-item">
+                        <div class="fake-image" style="background-image: url('img/tamago_p1.png');"></div>
+                        <p class="fake-name">Оригинальный тамагочи P1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="myths-block">
+                <h4>Мифы и легенды российских тамагочи</h4>
+                <div class="myths-grid">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="myth-icon"></span>
+                            <h5>Неумолкающие тамагочи</h5>
+                        </div>
+                        <p>В новостях того времени часто писали, 
+                            что тамагочи будет пищать по ночам и из-за этого дети перестанут спать, потому что питомца нужно кормить.
+                        </p>
+                    </div>
+                    
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="myth-icon"></span>
+                            <h5>Несбарсываемый тамагочи</h5>
+                        </div>
+                        <p>В случае смерти тамагочи становится пустышкой и не включается. Однако это миф, все модели имели кнопку сброса.</p>
+                    </div>
+                    
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="myth-icon"></span>
+                            <h5>Шокирующие истории</h5>
+                        </div>
+                        <p>В новостях часто писали о том, как один ребенок убил другого, надеясь, что он воскреснет как тамагочи. Однако подобные истории возникают 
+                            повсеместно, как только появляется новая популярная у детей игрушка.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+        </article>
+</section>
+
+<section class="base bg-blue" id="contents-section">
+    <article>
+        <h3>Полезные ресурсы о тамагочи</h3>
+        <p>Изучайте больше информации на этих проверенных сайтах:</p>
+        <div id="contents">
+            <div class="resource-links">
+                <a href="https://tamagotchi-official.com/gb/" class="resource-link">
+                    Официальный сайт Bandai
+                </a>
+                <a href="https://ru.wikipedia.org/wiki/Тамагочи" class="resource-link">
+                    Статья в Википедии
+                </a>
+                <a href="https://tamagotchi.fandom.com/wiki/Main_Page" class="resource-link">
+                    Вики фандом
+                </a>
+                <a href="html/history_of_tamago.html" class="resource-link">
+                    История тамагочи
+                </a>
+                <a href="html/gyaoppi.html" class="resource-link">
+                    Модели Gyaoppi
+                </a>
+            </div>
+        </div>
+        <div class="help-text">
+            <p><strong>Важно:</strong> При клике на любую ссылку система запросит подтверждение перехода</p>
+        </div>
+    </article>
+</section>
+</main>
+<footer id="links">
+        <nav>
+            <p>Мы в социальных сетях</p>
+            <div class="footer-icons">
+                <div class="footer-anim"><a href=""><img src="img/free-icon-telegram-739260.png" alt=""></a></div>
+                <div class="footer-anim"><a href=""><img src="img/free-icon-instagram-1077042.png" alt=""></a></div>
+                <div class="footer-anim"><a href=""><img src="img/free-icon-vk-2111828.png" alt=""></a></div>
+            </div>
+        </nav>
+        <p class="copyright">&copy; 2025 Tamagotchi Fan Website</p>
+</footer>
+<script src="js/links.js"></script>
+</body>
+</html>

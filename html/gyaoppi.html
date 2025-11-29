@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi Gyaoppi</title>
+    <link rel="icon" type="image/png" href="img/tamagotchi.png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/gyaoppi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <nav>
+        <input type="checkbox" id="menu-toggle" class="visually-hidden">
+        <label for="menu-toggle" class="menu-icon" aria-label="Меню">
+                <span class="hamburger"></span> 
+                <span class="hamburger"></span>
+                <span class="hamburger"></span> 
+        </label>
+        <div class="nav-left">
+            <div class="site-icon"></div>
+            <ol type="I" start="1" id="menu">
+                <li><a href="html/index.html">Главная страница</a></li>
+                <li><a href="#history">История серии</a></li>
+                <li><a href="#forms">Модели серии</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+            </ol>
+        </div>
+        <div class="nav-right">
+            <div class="notification-icon">
+                <span class="notification-count">3</span>
+                <ul class="notification-dropdown">
+                    <li><a href="">Новая статья: Tamagotchi Uni уже в продаже!</a></li>
+                    <li><a href="">Сегодня годовщина выпуска P1 (1996).</a></li>
+                    <li><a href="">Обновлена галерея редких моделей.</a></li>
+                </ul>
+            </div>
+            <a href="" id="reg-log">Профиль</a>
+        </div>
+    </nav>
+</header>
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" title="Закрыть">&times;</span>
+        <form id="login-form">
+            <h3>Вход</h3>
+            <input type="text" placeholder="Имя пользователя" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit" class="auth-btn"><a href="html/profile.html">Войти</a></button>
+            <p>Нет аккаунта? <a href="#" id="switchToReg">Зарегистрироваться</a></p>
+        </form>
+
+        <form id="reg-form" style="display: none;">
+            <h3>Регистрация</h3>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Имя пользователя" required>
+            <input type="password" placeholder="Пароль" required>
+
+            <fieldset>
+                <legend>Пол:</legend>
+                    <input type="radio" id="gender-male" name="gender" value="male" required>
+                    <label for="gender-male">Мужской</label>
+                    <input type="radio" id="gender-female" name="gender" value="female">
+                    <label for="gender-female">Женский</label>
+                    <input type="radio" id="gender-other" name="gender" value="other">
+                    <label for="gender-other">Другое</label>
+            </fieldset>
+        <div id="captcha-area">
+                <h3>А вы не робот?</h3>
+                <p id="captcha-display" class="captcha-text">Загрузка...</p>
+                <input type="text" id="captcha-input" placeholder="Введите код или сумму">
+                <p id="captcha-message" class="message-text"></p>
+        </div>
+        <button type="submit" class="auth-btn" id="reg-submit-button"><a href="html/profile.html">Создать аккаунт</a></button>
+        <p>Уже есть аккаунт? <a href="#" id="switchToLog">Войти</a></p>
+        </form>
+    </div>
+</div>
+
+<main>
+    <section class="base bg-green">
+        <article id="txt_history">
+                <h3>История возникновения Gyaoppi</h3>
+                <div id="history">
+                        <p class="text_orig"> <br>Тамагочи данной серии были распространены во всем мире. Во многих странах, где не продавались оригинальные тамагочи от Bandai, 
+                            гуаоппи стали их аналогом. </br> <br> Самое название Gyaoppi не имеет точного перевода с японского. Слог "гяо" является японским звуком, подражающего рыку динозавра,
+                            а слог "ппи" - уменьшительно-ласкательный суффикс. </br> <br>До сих пор не удалось установить, кто выпускал тамагочи этой серии. Ее не лицензировали, а перевыпуском занимались различные компании, например Fujitsu.</br> </p>
+                    <div class="txt_one">
+                        <figure class="effect_txt">
+                            <img src="img/gyaoppi.png" alt="" height="500px" width="400px" style="object-fit: contain;"> 
+                        </figure>
+                    </div>
+                </div>
+        </article>
+    </section>
+
+
+<section class="base bg-yellow">
+    <article>
+        <h3>Галерея устройств</h3>
+        <div class="gallery-section">
+            <div class="gallery-container">
+                <div class="main-image-container">
+                    <img id="mainImage" src="img/gyaoppi_dino.png" alt="Gyaoppi Dino">
+                </div>
+                
+                <div class="image-info">
+                    <h4 id="imageTitle">Gyaoppi Dino</h4>
+                    <p id="imageDescription">Питомец: Динозавр. Выпускался в корпусах разной формы</p>
+                </div>
+
+                <div class="gallery-actions">
+                    <a href="gyaoppi-dino.html" id="galleryDetailsBtn" class="gallery-btn">Подробнее</a>
+                </div>
+
+                <div class="thumbnails-container">
+                    <div class="thumbnail active" 
+                        data-image="img/gyaoppi_dino.png" 
+                        data-title="Gyaoppi Dino" 
+                        data-description="Питомец: Динозавр. Выпускался в корпусах разной формы"
+                        data-link="gyaoppi-dino.html">
+                        <img src="img/gyaoppi_dino.png" alt="Gyaoppi Dino">
+                    </div>
+                    <div class="thumbnail" 
+                        data-image="img/gyaoppi-ii-2-virtual-pet-dinosaur-game-green.png" 
+                        data-title="Gyaoppi Dino II" 
+                        data-description="Питомец: Динозавр. Переработанная первая версия динозаврика"
+                        data-link="#">
+                        <img src="img/gyaoppi-ii-2-virtual-pet-dinosaur-game-green.png" alt="Gyaoppi Dino II">
+                    </div>
+                    <div class="thumbnail" 
+                        data-image="img/gyaoppi_duck.png" 
+                        data-title="Gyaoppi Duck" 
+                        data-description="Питомец: утка. Единственный тамагочи этой серии, у которого есть лакомство"
+                        data-link="#">
+                        <img src="img/gyaoppi_duck.png" alt="Gyaoppi Duck">
+                    </div>
+                    <div class="thumbnail" 
+                        data-image="img/gyaoppi_chick.png" 
+                        data-title="Gyaoppi Chick" 
+                        data-description="Питомец: цыпленок. Была наиболее распространена в России"
+                        data-link="#">
+                        <img src="img/gyaoppi_chick.png" alt="Gyaoppi Chick">
+                    </div>
+                    <div class="thumbnail" 
+                        data-image="img/gyaoppi_super.png" 
+                        data-title="Super Gyaoppi 9 in 1" 
+                        data-description="Питомцы: собака, кошка, динозавр и другие. Производители заявляли о двух сотнях персонажей"
+                        data-link="#">
+                        <img src="img/gyaoppi_super.png" alt="Super Gyaoppi">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+<section class="base bg-blue">
+    <article>
+        <h3>Форум</h3>
+<section id="forum" class="forum-section">
+    <button id="newTopicBtn" class="btn-primary">Создать новую тему</button>
+    <div class="topics-list">
+        <div class="topic-card">
+        <div class="topic-icon"><img src="img/cat-gyaoppi-charact.png" alt=""></div>
+        <div class="topic-content">
+            <h3><a href="#">Как правильно вырастить кота-рыбу в super gyaoppi?</a></h3>
+            <p>Поделитесь лайфхаками по уходу питомцем...</p>
+            <div class="topic-meta">
+            <span class="author">Автор: TamaFan1997</span>
+            <span class="date">12 мая 2024</span>
+            <span class="replies">Ответов: 24</span>
+            </div>
+        </div>
+        </div>
+
+        <div class="topic-card">
+        <div class="topic-icon"><img src="img/dino-gyaoppi-charact.png" alt=""></div>
+        <div class="topic-content">
+            <h3><a href="">Обзор на аналог Gyaoppi - Octo-pets</a></h3>
+            <p>Только что получила его! Задавайте вопросы.</p>
+            <iframe src="https://www.youtube.com/embed/yzfUMNKBEkU?si=W-9Dhq4KDJg2ayJe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="topic-meta">
+            <span class="author">Автор: Collector42</span>
+            <span class="date">10 мая 2024</span>
+            <span class="replies">Ответов: 15</span>
+            </div>
+        </div>
+        </div>
+
+        <div class="topic-card">
+        <div class="topic-icon"><img src="img/chick-gyaoppi-charact.png" alt="" ></div>
+        <div class="topic-content">
+            <h3><a href="">Penpy Penguin - это gyaoppi?</a></h3>
+            <p>Помогите разобраться :(</p>
+            <div class="topic-meta">
+            <span class="author">Автор: PixelArtist</span>
+            <span class="date">8 мая 2024</span>
+            <span class="replies">Ответов: 57</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="pagination">
+        <a href="#">&laquo; Назад</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">Вперед &raquo;</a>
+    </div>
+    </section>
+    <div id="newTopicModal" class="modal">
+    <div class="modal-content forum-modal">
+        <span class="close-btn" onclick="closeNewTopicModal()">&times;</span>
+        <h3>Создать новую тему</h3>
+        <form id="newTopicForm">
+        <label for="topicTitle">Заголовок:</label>
+        <input type="text" id="topicTitle" required>
+
+        <label for="topicContent">Сообщение:</label>
+        <textarea id="topicContent" rows="6" required></textarea>
+
+        <label for="topicAuthor">Ваше имя:</label>
+        <input type="text" id="topicAuthor" required>
+
+        <button type="submit" class="btn-primary">Создать тему</button>
+        </form>
+    </div>
+    </div>
+    </article>
+</section>
+
+
+</main>
+<footer id="links">
+        <nav>
+            <p>Мы в социальных сетях</p>
+            <div class="footer-icons">
+                <div class="footer-anim"><a href=""><img src="img/free-icon-telegram-739260.png" alt=""></a></div>
+                <div class="footer-anim"><a href=""><img src="img/free-icon-instagram-1077042.png" alt=""></a></div>
+                <div class="footer-anim"><a href=""><img src="img/free-icon-vk-2111828.png" alt=""></a></div>
+            </div>
+        </nav>
+        <p class="copyright">&copy; 2025 Tamagotchi Fan Website</p>
+</footer>
+
+<script src="js/login.js"></script>
+<script src="js/forum.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>

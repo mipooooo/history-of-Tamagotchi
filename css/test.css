@@ -1,0 +1,4 @@
+.gallery_grid{
+    column-gap: 1rem;
+    column-count: 4;
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi Gyaoppi Dino</title>
+    <link rel="icon" type="image/png" href="img/tamagotchi.png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/gyaoppi.css">
+    <link rel="stylesheet" href="css/dino-gyaoppi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <nav>
+        <input type="checkbox" id="menu-toggle" class="visually-hidden">
+        <label for="menu-toggle" class="menu-icon" aria-label="Меню">
+                <span class="hamburger"></span> 
+                <span class="hamburger"></span>
+                <span class="hamburger"></span> 
+        </label>
+        <div class="nav-left">
+            <div class="site-icon"></div>
+            <ol type="I" start="1" id="menu">
+                <li><a href="html/index.html">Главная страница</a></li>
+                <li><a href="#inform">Общая информация</a></li>
+                <li><a href="#menus">Пункты меню</a></li>
+                <li><a href="#evol">Особенности развития</a></li>
+            </ol>
+        </div>
+        <div class="nav-right">
+            <div class="notification-icon">
+                <span class="notification-count">3</span>
+                <ul class="notification-dropdown">
+                    <li><a href="">Новая статья: Tamagotchi Uni уже в продаже!</a></li>
+                    <li><a href="">Сегодня годовщина выпуска P1 (1996).</a></li>
+                    <li><a href="">Обновлена галерея редких моделей.</a></li>
+                </ul>
+            </div>
+            <a href="" id="reg-log">Профиль</a>
+        </div>
+    </nav>
+</header>
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" title="Закрыть">&times;</span>
+        <form id="login-form">
+            <h3>Вход</h3>
+            <input type="text" placeholder="Имя пользователя" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit" class="auth-btn"><a href="html/profile.html">Войти</a></button>
+            <p>Нет аккаунта? <a href="#" id="switchToReg">Зарегистрироваться</a></p>
+        </form>
+
+        <form id="reg-form" style="display: none;">
+            <h3>Регистрация</h3>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Имя пользователя" required>
+            <input type="password" placeholder="Пароль" required>
+
+            <fieldset>
+                <legend>Пол:</legend>
+                    <input type="radio" id="gender-male" name="gender" value="male" required>
+                    <label for="gender-male">Мужской</label>
+                    <input type="radio" id="gender-female" name="gender" value="female">
+                    <label for="gender-female">Женский</label>
+                    <input type="radio" id="gender-other" name="gender" value="other">
+                    <label for="gender-other">Другое</label>
+            </fieldset>
+        <div id="captcha-area">
+                <h3>А вы не робот?</h3>
+                <p id="captcha-display" class="captcha-text">Загрузка...</p>
+                <input type="text" id="captcha-input" placeholder="Введите код или сумму">
+                <p id="captcha-message" class="message-text"></p>
+        </div>
+        <button type="submit" class="auth-btn" id="reg-submit-button"><a href="html/profile.html">Создать аккаунт</a></button>
+        <p>Уже есть аккаунт? <a href="#" id="switchToLog">Войти</a></p>
+        </form>
+    </div>
+</div>
+<main>
+<section class="base bg-yellow" id="inform">
+    <article>
+        <h3>Общая информация</h3>
+        <div class="left">
+            <p> Два первых тамагочи от Gyaoppi назывались в России - Gyaoppi и <a href="">Gyaoppi II</a>.
+                В обеих версиях питмцем выступал динозаврик и всопитать можно было только его. 
+                В наши дни во избежании путаницы эти тамагочи называют Gyaoppi Dino и Gyaoppi Dino II.
+            </p>
+            <figure class="effect_txt">
+                        <img src="img/gyaoppi_dino.png" alt=""  height="250px">
+                        <figcaption>
+                            <p>В форме динозавра черного зеленого или голубого цвета</p>
+                        </figcaption>
+            </figure>
+        </div>
+        <div class="right">
+        <p>Многие коллекционеры сравнивают тамагочи и говорят, что можно считать их разными версмия одного тамагочи, 
+            однако Dino и Dino II отличаются друг от друга играми, меню и развитием питомца.
+        Gyaoppi Dino начали выпускать в 1997 году, это была первая версия питомца-динозавра от компании Gyaoppi.</p>
+        <figure class="effect_txt">
+                    <img src="img/gyaoppi.png" alt="" height="190px">
+                    <figcaption>
+                        <p>Овальный желтого цвета, белого, зеленого или черного с надписью "gyaoppi</p>
+                    </figcaption>
+        </figure>
+        </div>
+        <div class="left">
+            <p>Оригинальный тамагочи выпускался в корпусах разной формы: от формы динозавра до яйца разных цветов и дизайнов. 
+                Наибольшее распространение получил корпус в виде яйца желтого цвета с напдисью Gyaoppi.
+                Первая модель практически не отличалась от прочих тамагочи, в ней девять пукнтов меню, которые встречюатся практиечски в каждом тамагочи. 
+            </p>
+            <figure class="effect_txt">
+                        <img src="img/pishi-gyaoppi.png" alt=""  height="250px">
+                        <figcaption>
+                            <p>Овальный черного или белого цвета цвета с надписью "Pishi"</p>
+                        </figcaption>
+            </figure>
+        </div>
+    </article>
+</section>
+<section class="base bg-green" id="menus">
+    <article>
+        <h3>Пункты меню</h3>
+        <div class="manage">
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Еда</span>
+                    <img src="img/chicken.png" alt="еда" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse1">
+                    <div class="card card-body">
+                    <p>На выбор дается три вида блюд:</p>
+                        <li style="list-style: none;">курица(основаное блюдо)</li>
+                        <li style="list-style: none;">морковь(лакомство)</li>
+                        <li style="list-style: none;">бутылка воды</li>
+                        <p>Курица заполняет одну ячейку сытости в статусах</p>
+                    </div>
+                </div>
+            </div>
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Игра 1</span>
+                    <img src="img/bat.png" alt="игра1" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse2">
+                    <div class="card card-body">
+                        <p>Необходимо угадать в какую сторону повернется питомец.
+                            Всего дается пять попыток,если правиль угадать три раза,
+                            то динозаврик радуется и заполняется одна ячейка настройения</p>
+                    </div>
+                </div>
+            </div>
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Игра 2</span>
+                    <img src="img/game2.png" alt="игра2" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse3">
+                    <div class="card card-body">
+                        <p>В игре случайным образом выбирается карта из колоды и с помощью кнопок необходимо угадать какая карта выпала:
+                            <li style="list-style: none;">от 2 до 7 (кнопка А)</li>
+                            <li style="list-style: none;">от 8 до короля (кнопка В)</li>
+                            <p>Всего дается пять попыток,если правиль угадать три раза,
+                            то динозаврик радуется и заполняется одна ячейка настройения</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Лечение</span>
+                    <img src="img/chemistry.png" alt="лечение" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse3">
+                    <div class="card card-body">
+                        <p>Если на экране появляется череп, значит динозаврик заболел, в этом случае поможет шприц(лечение).
+                            При выборе шприца анимации процесса лечения нет - питомец просто плачет. 
+                            В завивисимости от тяжести болезни, требуется разное количество уколов. 
+                            Если череп исчез и дино радуется, значит он здоров.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Обучение</span>
+                    <img src="img/book.png" alt="учеба" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse3">
+                    <div class="card card-body">
+                        <p>Если питомец отказывается есть, играть или зовет вас без причины, то вам поможет обучение.
+                            При активации появляется учитель с указкой.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Погода</span>
+                    <img src="img/sun.png" alt="погода" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse3">
+                    <div class="card card-body">
+                        <p>Это отличительная черта Gyaoppi. Меню погоды открывается, если идет дождь или вышло солнце. 
+                            В этом случае нужно дать дино кепку или зонтик. В обычное время при попытке открыть меню погоды, динозаврик откажется это делать. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Уборка</span>
+                    <img src="img/poop.png" alt="уборка" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse3">
+                    <div class="card card-body">
+                        <p>Стандартное меню с анимацией уборки кучек. Появиться может только одна куча, но возможно понаадобится несколько раз убрать ее.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Весы</span>
+                    <img src="img/scales.png" alt="статы" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse3">
+                    <div class="card card-body">
+                        <p>В этом пункте можно посмотреть статистику вашего питомца: сколько ему лет, сколько он весит. 
+                            Также можно проверить его статусы: дисципилны, сытости и настроения. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="point">
+                <a href="#" class="read-more-btn">
+                    <span class="btn-text">Свет</span>
+                    <img src="img/lamp.png" alt="еда" class="btn-icon" width="32px" height="32px" style="object-fit: contain;">
+                </a>
+                <div class="collapse" id="collapse3">
+                    <div class="card card-body">
+                        <p>Свет необходимо выключать, когда динозаврик спит, на экране все пиксели инвертируются, имитируя ночь. 
+                            Питомец может спать и с включенным светом, но может проснуться больным. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+<section class="base bg-blue" id="evol">
+    <article>
+        <h3>Особенности развития</h3>
+        <div class="evol">
+            <p>Развитие динозаврика зависит от ухода. В оригинальной инструкции присутсвует неполный чарт роста, 
+                показывающий, что питомец может эволюционировать в разные виды. 
+            Также инструкция намекает, что при идеальном уходе питомец никогда не умрет. 
+        </p>
+            <img src="img/evol.png" alt="">
+        </div>
+    </article>
+</section>
+</main>
+<footer id="links">
+        <nav>
+            <p>Мы в социальных сетях</p>
+            <div class="footer-icons">
+                <div class="footer-anim"><a href=""><img src="img/free-icon-telegram-739260.png" alt=""></a></div>
+                <div class="footer-anim"><a href=""><img src="img/free-icon-instagram-1077042.png" alt=""></a></div>
+                <div class="footer-anim"><a href=""><img src="img/free-icon-vk-2111828.png" alt=""></a></div>
+            </div>
+        </nav>
+        <p class="copyright">&copy; 2025 Tamagotchi Fan Website</p>
+</footer>
+<script src="js/login.js"></script>
+<script src="js/collapse.js"></script>
+</body>
+</html>

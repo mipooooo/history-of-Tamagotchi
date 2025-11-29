@@ -1,0 +1,19 @@
+.parallax-pixels {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.pixel {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.5s ease-out;
+    filter: brightness(1.2) saturate(0.8);
+}

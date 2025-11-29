@@ -1,0 +1,560 @@
+.tamagotchi-3d-carousel {
+    perspective: 1000px;
+    height: 400px;
+}
+
+.carousel {
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#history{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    align-items: center;
+}
+
+#history img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.tamagotchi-series-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.tamagotchi-series-page h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    
+}
+
+.series-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    border: 3px solid #261534;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 8px 8px 0px #ffbbdb;
+}
+.series-card img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    align-items: center;
+}
+.series-card:hover {
+    transform: translateY(-5px);
+}
+
+.device-display {
+    align-items: center;
+}
+
+.card-info h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: #333;
+    margin: 15px 0 10px;
+    font-weight: bold;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.details-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #261534;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.details-btn:hover {
+    background: #5a327d;
+    box-shadow: 0 0 8px #ffbbdb;
+}
+
+
+
+.forum-section {
+    padding: 2rem;
+}
+
+.btn-primary {
+    background-color: #ffbbdb;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.topics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.topic-card {
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    border-left: 5px solid #ffbbdb;
+}
+
+.topic-icon img{
+    margin-right: 1rem;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.topic-content {
+    flex-grow: 1;
+}
+
+.topic-content h3 {
+    margin-top: 0;
+}
+
+
+.topic-meta {
+    margin-top: 0.5rem;
+}
+
+.topic-meta span {
+    margin-right: 1rem;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination a {
+    padding: 0.5rem 1rem;
+    border: 2px solid #261534;
+    border-radius: 5px;
+    margin: 0 0.2rem;
+}
+
+.forum-modal {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 2rem;
+    border: 3px dashed #261534;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.forum-modal label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.forum-modal input,
+.forum-modal textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+/* gallery.css */
+.gallery-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-image-container {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    border: 3px solid #261534;
+    border-radius: 12px;
+    padding: 20px;
+    background: white;
+    box-shadow: 8px 8px 0px #ffbbdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnails-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #261534;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px;
+    background: white;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumbnail:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 187, 219, 0.4);
+}
+
+.thumbnail.active {
+    border-color: #ffbbdb;
+    box-shadow: 0 0 10px #ffbbdb;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.image-info {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #261534;
+}
+
+.image-info h4 {
+    color: #261534;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.image-info p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* gallery.css - стили для кнопки */
+.gallery-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #261534;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid #261534;
+    text-align: center;
+    min-width: 200px;
+}
+
+.gallery-btn:hover {
+    background: #5a327d;
+    box-shadow: 0 0 15px #ffbbdb;
+    transform: translateY(-3px);
+}
+
+
+
+/* Медиа-запросы для разных размеров экранов */
+
+/* Планшеты */
+@media screen and (max-width: 1024px) {
+    #history {
+        flex-direction: column;
+    }
+    
+    .text_orig {
+        margin: 20px;
+    }
+    
+    .topic-card {
+        flex-direction: column;
+    }
+    
+    .topic-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Мобильные устройства */
+@media screen and (max-width: 768px) {
+    .tamagotchi-series-page {
+        padding: 20px 15px;
+    }
+    
+    .tamagotchi-series-page h1 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    
+    /* История */
+    #history {
+        margin: 10px;
+    }
+    
+    .text_orig {
+        margin: 10px;
+        font-size: 0.9rem;
+    }
+    
+    /* Галерея */
+    .gallery-section {
+        padding: 15px 10px;
+    }
+    
+    .main-image-container {
+        height: 250px;
+        padding: 10px;
+    }
+    
+    .thumbnails-container {
+        gap: 8px;
+    }
+    
+    .thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .image-info {
+        padding: 10px;
+        margin-top: 10px;
+    }
+    
+    .image-info h4 {
+        font-size: 1rem;
+    }
+    
+    .image-info p {
+        font-size: 0.85rem;
+    }
+    
+    .gallery-btn {
+        padding: 8px 16px;
+        min-width: 160px;
+        font-size: 13px;
+    }
+    
+    /* Форум */
+    .forum-section {
+        padding: 1rem;
+    }
+    
+    .btn-primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .topic-card {
+        padding: 0.8rem;
+    }
+    
+    .topic-content h3 {
+        font-size: 1rem;
+    }
+    
+    .topic-content p {
+        font-size: 0.85rem;
+    }
+    
+    .topic-meta {
+        font-size: 0.8rem;
+    }
+    
+    .topic-meta span {
+        margin-right: 0.5rem;
+    }
+    
+    /* Видео в форуме */
+    .topic-card iframe {
+        height: 200px;
+    }
+    
+    .pagination {
+        margin-top: 1rem;
+    }
+    
+    .pagination a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Модальное окно */
+    .forum-modal {
+        padding: 1rem;
+        width: 95%;
+    }
+}
+
+/* Очень маленькие мобильные устройства */
+@media screen and (max-width: 480px) {
+    .tamagotchi-series-page {
+        padding: 15px 10px;
+    }
+    
+    .tamagotchi-series-page h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    /* История */
+    .text_orig {
+        font-size: 0.8rem;
+        margin: 5px;
+    }
+    
+    #history img {
+        max-width: 250px;
+    }
+    
+    /* Галерея */
+    .main-image-container {
+        height: 200px;
+    }
+    
+    .thumbnails-container {
+        gap: 5px;
+    }
+    
+    .thumbnail {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .image-info h4 {
+        font-size: 0.9rem;
+    }
+    
+    .image-info p {
+        font-size: 0.8rem;
+    }
+    
+    .gallery-btn {
+        padding: 6px 12px;
+        min-width: 140px;
+        font-size: 12px;
+    }
+    
+    /* Форум */
+    .forum-section {
+        padding: 0.8rem;
+    }
+    
+    .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    
+    .topic-card {
+        padding: 0.6rem;
+    }
+    
+    .topic-icon img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .topic-content h3 {
+        font-size: 0.9rem;
+    }
+    
+    .topic-content p {
+        font-size: 0.8rem;
+    }
+    
+    .topic-meta {
+        font-size: 0.75rem;
+    }
+    
+    .topic-meta span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.2rem;
+    }
+    
+    /* Видео в форуме */
+    .topic-card iframe {
+        height: 180px;
+    }
+    
+    .pagination a {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+        margin: 0 0.05rem;
+    }
+    
+    /* Модальное окно */
+    .forum-modal {
+        padding: 0.8rem;
+    }
+    
+    .forum-modal h3 {
+        font-size: 1.1rem;
+    }
+    
+    .forum-modal input,
+    .forum-modal textarea {
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+}
+

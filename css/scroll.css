@@ -1,0 +1,54 @@
+/* scroll-loader.css */
+.news-loader {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 2px dashed #261534;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #261534;
+}
+
+.news-loader p {
+    margin: 0;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+}
+
+/* Анимация загрузки */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.news-loader {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Плавное появление элементов при скролле */
+.scroll-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.scroll-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news-card {
+    transition: all 0.6s ease !important;
+}
+
+/* Для галереи */
+.txt_two {
+    transition: all 0.6s ease !important;
+}
+
+/* Для карусели */
+.card-item {
+    transition: all 0.6s ease !important;
+}
