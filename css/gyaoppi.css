@@ -189,7 +189,6 @@
 }
 
 
-/* gallery.css */
 .gallery-section {
     padding: 40px 20px;
     max-width: 1200px;
@@ -281,7 +280,6 @@
     line-height: 1.5;
 }
 
-/* gallery.css - стили для кнопки */
 .gallery-actions {
     display: flex;
     justify-content: center;
@@ -309,11 +307,6 @@
     transform: translateY(-3px);
 }
 
-
-
-/* Медиа-запросы для разных размеров экранов */
-
-/* Планшеты */
 @media screen and (max-width: 1024px) {
     #history {
         flex-direction: column;
@@ -333,7 +326,6 @@
     }
 }
 
-/* Мобильные устройства */
 @media screen and (max-width: 768px) {
     .tamagotchi-series-page {
         padding: 20px 15px;
@@ -344,7 +336,6 @@
         margin-bottom: 30px;
     }
     
-    /* История */
     #history {
         margin: 10px;
     }
@@ -354,7 +345,6 @@
         font-size: 0.9rem;
     }
     
-    /* Галерея */
     .gallery-section {
         padding: 15px 10px;
     }
@@ -392,7 +382,7 @@
         font-size: 13px;
     }
     
-    /* Форум */
+
     .forum-section {
         padding: 1rem;
     }
@@ -423,7 +413,6 @@
         margin-right: 0.5rem;
     }
     
-    /* Видео в форуме */
     .topic-card iframe {
         height: 200px;
     }
@@ -437,14 +426,13 @@
         font-size: 0.8rem;
     }
     
-    /* Модальное окно */
     .forum-modal {
         padding: 1rem;
         width: 95%;
     }
 }
 
-/* Очень маленькие мобильные устройства */
+
 @media screen and (max-width: 480px) {
     .tamagotchi-series-page {
         padding: 15px 10px;
@@ -455,7 +443,7 @@
         margin-bottom: 20px;
     }
     
-    /* История */
+
     .text_orig {
         font-size: 0.8rem;
         margin: 5px;
@@ -465,7 +453,7 @@
         max-width: 250px;
     }
     
-    /* Галерея */
+
     .main-image-container {
         height: 200px;
     }
@@ -493,7 +481,7 @@
         font-size: 12px;
     }
     
-    /* Форум */
+
     .forum-section {
         padding: 0.8rem;
     }
@@ -531,7 +519,6 @@
         margin-bottom: 0.2rem;
     }
     
-    /* Видео в форуме */
     .topic-card iframe {
         height: 180px;
     }
@@ -542,7 +529,6 @@
         margin: 0 0.05rem;
     }
     
-    /* Модальное окно */
     .forum-modal {
         padding: 0.8rem;
     }
